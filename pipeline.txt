@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -20,7 +21,16 @@ pipeline {
 
         stage('TEST') {
             steps {
-                echo 'Test Success'
+                dir('backend') {
+                    sh '''
+                        mvn sonar:sonar \
+                        -Dsonar.projectKey=Student-app \
+                        -Dsonar.projectName=Student-app \
+                        -Dsonar.host.url=http://13.200.202.18:9000 \
+                        -Dsonar.token=sqp_c2e3099ea01a834b1d519fec66b425a33b21094b
+                    '''
+                }
+                echo 'Test + Sonar Success'
             }
         }
 
