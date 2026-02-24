@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('PULL') {
+            steps {
+                git 'https://github.com/rohanmeshram50-png/new-repo.git'
+                echo 'Pull Success'
+            }
+        }
+
+        stage('BUILD') {
+            steps {
+                dir('backend') {
+                    sh 'mvn clean package -DskipTests'
+                }
+            }
+        }
+
+        stage('TEST') {
+            steps {
+                echo 'Test Success'
+            }
+        }
+
+        stage('DEPLOY') {
+            steps {
+                echo 'Deploy Success'
+            }
+        }
+    }
+}
