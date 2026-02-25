@@ -28,8 +28,8 @@ pipeline {
                             -Dsonar.projectName=Student-app \
                         '''
                     }
-                }
-                echo 'Test + Sonar Success'
+               0 }
+                echo 'Test + Sonar Success Hey Rohan How Are You?'
             }
         }
 
