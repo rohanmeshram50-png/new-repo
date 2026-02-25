@@ -24,8 +24,8 @@ pipeline {
                     withSonarQubeEnv('SonarQube') {
                         sh '''
                             mvn sonar:sonar \
-                            -Dsonar.projectKey=Student-app1 \
-                            -Dsonar.projectName=Student-app1 \
+                            -Dsonar.projectKey=Student-app \
+                            -Dsonar.projectName=Student-app \
                         '''
                     }
                 }
